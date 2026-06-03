@@ -1,0 +1,439 @@
+@media (max-width: 601px) {
+
+  .nav-container {
+    position: relative;
+    pointer-events: none;
+  }
+
+  .nav-container nav {
+    display: none !important;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+    position: absolute;
+    background: transparent;
+    right: 20px;
+    top: 38px;
+    width: 18px;
+    height: 18px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 12;
+    pointer-events: auto;
+  }
+
+
+
+  .mobile-nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  .mobile-nav-panel {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: auto;
+    padding: 16px 0px;
+    border-radius: 12px;
+    z-index: -1;
+    pointer-events: auto;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 280ms ease, opacity 180ms ease, transform 280ms ease;
+    will-change: max-height, opacity, transform;
+  }
+  
+
+  .mobile-nav-panel.is-open {
+    max-height: 180px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .mobile-nav-panel.is-open a{
+    text-shadow: 0 0 10px #ffffff;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    pointer-events: auto;
+  }
+  .mobile-nav-panel .nav-link h2 {
+    margin: 0;
+    font-size: clamp(16px, 4vw, 20px);
+    
+  }
+
+  .mobile-nav-panel .nav-link.is-active h2 {
+    color: #dab67d;
+    text-shadow: 0 0 10px #dab67d;
+  }
+  
+
+  .nav-container {
+    
+    --header-mobile-scale: clamp(0.45, calc(100vw / 601px
+  ), 1);
+    transform-origin: top left;
+    transform: scale(var(--header-mobile-scale));
+    will-change: transform;
+    /* outline: 1px solid rgb(255, 0, 0); */
+    margin: 0 20px ;
+    pointer-events: none;
+    
+
+  }
+  header::before{
+    display: none;
+  }
+  
+  .logo-container::before{
+    --header-mobile-scale: clamp(0.45, calc(100vw / 601px
+  ), 1);
+    transform-origin: top left;
+    transform:  scale(1/var(--header-mobile-scale));
+    will-change: transform;
+    position: absolute;
+    content: "";
+    left: -15px;
+    right: 0;
+    width: 650px;
+    transform: translateY(60px);
+    height: 18px; /* visual height */
+
+
+    /* force SVG to stretch to full width of the pseudo-element */
+    background-size: 650px 100%;
+    /* white horizontal lines with alpha gradient */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 650 1'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='0'><stop offset='0%' stop-color='white' stop-opacity='0'/><stop offset='20%' stop-color='white' stop-opacity='1'/><stop offset='80%' stop-color='white' stop-opacity='1'/><stop offset='100%' stop-color='white' stop-opacity='0'/></linearGradient></defs><rect x='0' y='0' width='100%' height='2' fill='url(%23g)'/></svg>");
+    pointer-events: none;
+    
+  }
+
+  .logo-container,
+  .project-frame-header,
+  .project-frame-header-title-logo,
+  .project-frame-header-software,
+  .project-frame-header-line,
+  .project-frame-header-subtitle,
+  .project-frame-header-title {
+    pointer-events: none;
+  }
+
+  .mobile-nav-toggle,
+  .mobile-nav-panel,
+  .mobile-nav-panel .nav-link,
+  .mobile-nav-panel .nav-link * {
+    pointer-events: auto;
+  }
+
+  .deco-corners svg {
+    --header-mobile-scale: clamp(0.45, calc(100vw / 601px
+  ), 1);
+    transform:  scale(var(--header-mobile-scale));
+    will-change: transform;
+
+  }
+
+  .project-frame-content-image svg {
+    display: none;
+
+  }
+  
+  .deco-corners-top-right {
+    transform-origin: top right;
+  }
+
+  .deco-corners-bottom-right-1 {
+    transform-origin: bottom right;
+
+  }
+
+  .deco-corners-bottom-right-2 {
+    transform-origin: bottom right;
+
+  }
+
+  .deco-corners-bottom-left {
+    transform-origin: bottom left;
+
+  }
+
+  .frame-controller-image-editing .project-frame-content-button {
+    align-self: flex-end;
+  }
+
+
+
+
+
+
+  
+
+ 
+  .frame-controller-illustrations,
+  .frame-controller-logos,
+  .frame-controller-image-editing,
+  .frame-controller-3d-modeling {
+    width: min(100vw - 40px, 676px);
+    max-width: calc(100vw - 40px);
+    margin: 0 20px;
+   
+    box-sizing: border-box;
+    height: fit-content;
+    align-self: center;
+  }
+
+  .frame-controller-illustrations .project-frame,
+  .frame-controller-logos .project-frame,
+  .frame-controller-image-editing .project-frame,
+  .frame-controller-3d-modeling .project-frame {
+    transition: none !important;
+  }
+
+  .frame-controller-illustrations .project-frame:hover,
+  .frame-controller-logos .project-frame:hover,
+  .frame-controller-image-editing .project-frame:hover,
+  .frame-controller-3d-modeling .project-frame:hover,
+  .frame-controller-illustrations .project-frame:active,
+  .frame-controller-logos .project-frame:active,
+  .frame-controller-image-editing .project-frame:active,
+  .frame-controller-3d-modeling .project-frame:active {
+    transform: none !important;
+  }
+
+  .project-frame-header{
+    /* outline: 1px solid rgb(60, 255, 0); */
+    height: fit-content;
+    padding: 0 ;
+    top: 0;
+  }
+
+  .project-frame-header-title-logo {
+    top: 0;
+  
+  }
+
+  .project-frame-header-title-logo img{
+    width: 30px !important;
+    height: auto !important;
+  }
+
+  .project-frame-header-line {
+  bottom: 3px;
+  }
+
+  .project-frame-header-subtitle {
+    margin: 0 20px;
+  }
+
+
+
+  .frame-controller-illustrations .project-frame-content,
+  .frame-controller-logos .project-frame-content,
+  .frame-controller-image-editing .project-frame-content,
+  .frame-controller-3d-modeling .project-frame-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 20px;
+    gap: clamp(14px, 4vw, 28px);
+    margin: 20px auto 32px;
+  }
+
+  .frame-controller-illustrations .project-frame-content-image,
+  .frame-controller-logos .project-frame-content-image,
+  .frame-controller-image-editing .project-frame-content-image,
+  .frame-controller-3d-modeling .project-frame-content-image,
+  .frame-controller-illustrations .project-frame-content-text-button,
+  .frame-controller-logos .project-frame-content-text-button,
+  .frame-controller-image-editing .project-frame-content-text-button,
+  .frame-controller-3d-modeling .project-frame-content-text-button {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  .frame-controller-illustrations .project-frame-content-image,
+  .frame-controller-logos .project-frame-content-image,
+  .frame-controller-image-editing .project-frame-content-image,
+  .frame-controller-3d-modeling .project-frame-content-image {
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  .frame-controller-illustrations .project-frame-content-text-button,
+  .frame-controller-logos .project-frame-content-text-button,
+  .frame-controller-image-editing .project-frame-content-text-button,
+  .frame-controller-3d-modeling .project-frame-content-text-button {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    gap: clamp(12px, 3vw, 20px);
+  }
+
+  .frame-controller-logos .project-frame-content-image img{
+    margin: 10px;
+  }
+
+  .frame-controller-illustrations .project-frame-content-image img,
+  .frame-controller-image-editing .project-frame-content-image img,
+  .frame-controller-3d-modeling .project-frame-content-image img,
+  .frame-controller-image-editing .project-frame-content-video,
+  .frame-controller-3d-modeling .project-frame-content-video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .frame-controller-logos .project-frame-content-image-frame {
+    width: 100%;
+    height: auto;
+  }
+
+  .frame-controller-logos .project-frame-content-image svg,
+  .frame-controller-image-editing .project-frame-content-image svg,
+  .frame-controller-3d-modeling .project-frame-content-image svg {
+    right: -12px;
+  }
+
+  .frame-controller-illustrations .project-frame-header-title,
+  .frame-controller-logos .project-frame-header-title,
+  .frame-controller-image-editing .project-frame-header-title,
+  .frame-controller-3d-modeling .project-frame-header-title {
+    font-size: clamp(22px, 4.8vw, 32px);
+    line-height: 1.05;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .frame-controller-illustrations .project-frame-header-subtitle,
+  .frame-controller-logos .project-frame-header-subtitle,
+  .frame-controller-image-editing .project-frame-header-subtitle,
+  .frame-controller-3d-modeling .project-frame-header-subtitle {
+    font-size: clamp(10px, 2vw, 13px);
+    line-height: 1.15;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .frame-controller-illustrations .project-frame-header-title-logo,
+  .frame-controller-logos .project-frame-header-title-logo,
+  .frame-controller-image-editing .project-frame-header-title-logo,
+  .frame-controller-3d-modeling .project-frame-header-title-logo {
+    width: calc(100% - 40px);
+    gap: clamp(10px, 3vw, 32px);
+    margin: 0 20px;
+  }
+
+  .frame-controller-illustrations .project-frame-header-title-logo svg,
+  .frame-controller-logos .project-frame-header-title-logo svg,
+  .frame-controller-image-editing .project-frame-header-title-logo svg,
+  .frame-controller-3d-modeling .project-frame-header-title-logo svg {
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 1;
+  }
+
+  .frame-controller-illustrations .project-frame-header-software,
+  .frame-controller-about .project-frame-header-software,
+  .frame-controller-logos .project-frame-header-software,
+  .frame-controller-image-editing .project-frame-header-software,
+  .frame-controller-3d-modeling .project-frame-header-software {
+    gap: clamp(8px, 2vw, 12px);
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .frame-controller-illustrations .project-frame-header-software svg,
+  .frame-controller-about .project-frame-header-software svg,
+  .frame-controller-logos .project-frame-header-software svg,
+  .frame-controller-image-editing .project-frame-header-software svg,
+  .frame-controller-3d-modeling .project-frame-header-software svg {
+    width: 30px;
+    height: auto;
+  }
+
+  .project-frame-content-text-button p {
+    font-size: clamp(11px, 2.2vw, 13px);
+  }
+
+  .footer-content > nav.footer-content-nav {
+    display: none !important;
+  }
+  .footer-content > :nth-child(2) {
+    display: none !important;
+  }
+  .footer-content{
+    --header-mobile-scale: clamp(0.45, calc(100vw / 601px
+  ), 1);
+    transform-origin: top left;
+    transform:  scale(1/var(--header-mobile-scale));
+    will-change: transform;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(18px, 6vw, 64px);
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .footer-content > nav.footer-content-nav {
+    display: none !important;
+  }
+  .footer-content > :nth-child(2) {
+    display: none !important;
+  }
+  .footer-content{
+    justify-content: center;
+    align-items: center;
+    gap: clamp(18px, 6vw, 64px);
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .footer-content div{
+    
+   
+    --header-mobile-scale: clamp(0.45, calc(100vw / 601px
+  ), 1);
+    transform-origin: center center;
+    transform: scale(var(--header-mobile-scale)) translateY(16px);
+    will-change: transform;
+    
+  }
+
+  .footer-mobile-hide{
+    display: none;
+  }
+
+  .footer-content-socials{
+    flex-shrink: 0;
+  }
+  
+
+  
+
+}
