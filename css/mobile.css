@@ -1,5 +1,10 @@
 @media (max-width: 601px) {
 
+  header {
+    position: fixed;
+    z-index: 99999 !important;
+  }
+
   .nav-container {
     position: relative;
     pointer-events: none;
@@ -432,6 +437,68 @@
   .footer-content-socials{
     flex-shrink: 0;
   }
+
+  .frame-controller-about .project-frame-header {
+    height: clamp(83px, calc(4.5vw + 20px), 80px);
+    /* outline: red solid 1px; */
+    
+
+  }
+
+  .frame-controller-about {
+    position: relative;
+    z-index: -1;
+    display: block; /* ensure normal flow */
+    min-width: 203px; /* allow flex children to shrink */
+  }
+  .frame-controller-about .project-frame-header-subtitle {
+    top: 50px;
+    margin: 0 14px;
+
+  }
+  .frame-controller-about .project-frame-header-line {
+    bottom: 0px;
+    top: 48px;
+  }
+
+  .frame-controller-about .project-frame-content {
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    top: auto; /* avoid visual offset that breaks container height */
+    margin: 20px 0 30px 0; /* spacing below header */
+    margin-top: calc(1rem + 50px); /* ensure content sits below header and contributes to parent's height */
+    width: calc(100% - 30px);
+  
+  }
+
+  .frame-controller-about .project-frame-content-text-button {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .frame-controller-about .project-frame-header-title-logo > .project-frame-header-software {
+    justify-content: flex-start;
+    padding: 0 0 0 20px;
+    width: 130%;
+    top: 75px;
+    position: absolute;
+    right: auto;
+    transform-origin: left;
+    align-self: flex-start;
+    flex: 0 ;
+    max-width: none;
+    margin: 0 !important;
+  
+  }
+
+  .frame-controller-about .project-frame-header-title-logo {
+    padding: 0px 0px 0 0px;
+
+  }
+
+
   
 
   
