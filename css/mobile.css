@@ -180,45 +180,10 @@
   .frame-controller-image-editing .project-frame-content-button {
     align-self: flex-end;
   }
-
-
-
-
-
-
   
-
- 
-  .frame-controller-illustrations,
-  .frame-controller-logos,
-  .frame-controller-image-editing,
-  .frame-controller-3d-modeling {
-    width: min(100vw - 40px, 676px);
-    max-width: calc(100vw - 40px);
-    margin: 0 20px;
-   
-    box-sizing: border-box;
-    height: fit-content;
-    align-self: center;
-  }
-
-  .frame-controller-illustrations .project-frame,
-  .frame-controller-logos .project-frame,
-  .frame-controller-image-editing .project-frame,
-  .frame-controller-3d-modeling .project-frame {
-    transition: none !important;
-  }
-
-  .frame-controller-illustrations .project-frame:hover,
-  .frame-controller-logos .project-frame:hover,
-  .frame-controller-image-editing .project-frame:hover,
-  .frame-controller-3d-modeling .project-frame:hover,
-  .frame-controller-illustrations .project-frame:active,
-  .frame-controller-logos .project-frame:active,
-  .frame-controller-image-editing .project-frame:active,
-  .frame-controller-3d-modeling .project-frame:active {
-    transform: none !important;
-  }
+  .project-frame-header{
+    height: 150px;
+  }  
 
   .project-frame-header-title-logo {
     margin: 0 20px;
@@ -228,148 +193,107 @@
 
   .project-frame-header-subtitle {
     margin: 0 20px;
+    top: 88px;
   }
 
-
-
-  .frame-controller-illustrations .project-frame-content,
-  .frame-controller-logos .project-frame-content,
-  .frame-controller-image-editing .project-frame-content,
-  .frame-controller-3d-modeling .project-frame-content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0 20px;
-    gap: clamp(14px, 4vw, 28px);
-    margin: 20px auto 32px;
+  .project-frame-header-line {
+    top: 84px;
   }
 
-  .frame-controller-illustrations .project-frame-content-image,
-  .frame-controller-logos .project-frame-content-image,
-  .frame-controller-image-editing .project-frame-content-image,
-  .frame-controller-3d-modeling .project-frame-content-image,
-  .frame-controller-illustrations .project-frame-content-text-button,
-  .frame-controller-logos .project-frame-content-text-button,
-  .frame-controller-image-editing .project-frame-content-text-button,
-  .frame-controller-3d-modeling .project-frame-content-text-button {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    flex: 0 0 auto;
-    align-self: center;
-  }
-
-  .frame-controller-illustrations .project-frame-content-image,
-  .frame-controller-logos .project-frame-content-image,
-  .frame-controller-image-editing .project-frame-content-image,
-  .frame-controller-3d-modeling .project-frame-content-image {
-    order: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-  }
-
-  .frame-controller-illustrations .project-frame-content-text-button,
-  .frame-controller-logos .project-frame-content-text-button,
-  .frame-controller-image-editing .project-frame-content-text-button,
-  .frame-controller-3d-modeling .project-frame-content-text-button {
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    
-    gap: clamp(12px, 3vw, 20px);
-  }
-
-  .frame-controller-logos .project-frame-content-image img{
-    margin: 10px;
-  }
-
-  .frame-controller-illustrations .project-frame-content-image img,
-  .frame-controller-image-editing .project-frame-content-image img,
-  .frame-controller-3d-modeling .project-frame-content-image img,
-  .frame-controller-image-editing .project-frame-content-video,
-  .frame-controller-3d-modeling .project-frame-content-video {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .frame-controller-logos .project-frame-content-image-frame {
-    width: 100%;
-    height: auto;
-  }
-
-  .frame-controller-logos .project-frame-content-image svg,
-  .frame-controller-image-editing .project-frame-content-image svg,
-  .frame-controller-3d-modeling .project-frame-content-image svg {
-    right: -12px;
+  .project-frame-header-title-logo {
+    gap: 10px;
   }
 
   .frame-controller-illustrations .project-frame-header-title,
   .frame-controller-logos .project-frame-header-title,
   .frame-controller-image-editing .project-frame-header-title,
   .frame-controller-3d-modeling .project-frame-header-title {
-    font-size: clamp(22px, 4.8vw, 32px);
-    line-height: 1.05;
-    max-width: 100%;
-    overflow-wrap: anywhere;
+    font-size: 30px;
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
+
+  .frame-controller-logos, 
+  .frame-controller-illustrations,
+  .frame-controller-image-editing,
+  .frame-controller-3d-modeling {
+    min-width: 320px; 
+
   }
 
   .frame-controller-illustrations .project-frame-header-subtitle,
   .frame-controller-logos .project-frame-header-subtitle,
   .frame-controller-image-editing .project-frame-header-subtitle,
   .frame-controller-3d-modeling .project-frame-header-subtitle {
-    font-size: clamp(10px, 2vw, 13px);
-    line-height: 1.15;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-  }
-
-  .frame-controller-illustrations .project-frame-header-title-logo,
-  .frame-controller-logos .project-frame-header-title-logo,
-  .frame-controller-image-editing .project-frame-header-title-logo,
-  .frame-controller-3d-modeling .project-frame-header-title-logo {
-    width: calc(100% - 40px);
-    gap: clamp(10px, 3vw, 32px);
-    margin: 0 20px;
-  }
-
-  .frame-controller-illustrations .project-frame-header-title-logo svg,
-  .frame-controller-logos .project-frame-header-title-logo svg,
-  .frame-controller-image-editing .project-frame-header-title-logo svg,
-  .frame-controller-3d-modeling .project-frame-header-title-logo svg {
-    max-width: 100%;
-    height: auto;
-    flex-shrink: 1;
+    font-size: 12px;
   }
 
   .frame-controller-illustrations .project-frame-header-software,
-  .frame-controller-about .project-frame-header-software,
   .frame-controller-logos .project-frame-header-software,
   .frame-controller-image-editing .project-frame-header-software,
   .frame-controller-3d-modeling .project-frame-header-software {
+    justify-content: flex-start;
+    padding: 0;
+    width: 100%;
+    top: 105px;
+    position: absolute;
+    right: auto;
+    transform-origin: left;
+    align-self: flex-start;
+    flex: 0;  
+    max-width: none;
+    margin: 0 !important;
     gap: clamp(8px, 2vw, 12px);
     flex-wrap: wrap;
     max-width: 100%;
   }
 
-  .frame-controller-illustrations .project-frame-header-software svg,
-  .frame-controller-about .project-frame-header-software svg,
-  .frame-controller-logos .project-frame-header-software svg,
-  .frame-controller-image-editing .project-frame-header-software svg,
-  .frame-controller-3d-modeling .project-frame-header-software svg {
-    width: 30px;
-    height: auto;
+  .frame-controller-logos .project-frame-header-software,
+  .frame-controller-image-editing .project-frame-header-software{
+    top: 90px;
+  }
+  
+
+  .frame-controller-illustrations .project-frame-content,
+  .frame-controller-logos .project-frame-content,
+  .frame-controller-image-editing .project-frame-content,
+  .frame-controller-3d-modeling .project-frame-content {
+    gap: 30px;
+    margin: 50px 20px;
+    width: calc(100% - 40px);
   }
 
+  .frame-controller-logos .project-frame-content,
+  .frame-controller-image-editing .project-frame-content{
+    margin: 30px 20px;
+  }
+
+  .frame-controller-illustrations .project-frame-content-image,
+  .frame-controller-logos .project-frame-content-image,
+  .frame-controller-image-editing .project-frame-content-image,
+  .frame-controller-3d-modeling .project-frame-content-image {
+    
+    flex: 0 0 90%;
+    width: 90% !important;
+    min-width: 90%;
+    max-width: none;
+
+
+  }
+
+
+
+ 
+  .frame-controller-about .project-frame-header-software {
+    gap: clamp(8px, 2vw, 12px);
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  
+
   .project-frame-content-text-button p {
-    font-size: clamp(11px, 2.2vw, 13px);
+    font-size: clamp(12px, 2.2vw, 13px);
   }
 
   .footer-content > nav.footer-content-nav {
@@ -445,7 +369,7 @@
   .frame-controller-about .project-frame-content-image {
     align-self: center;
     flex: 0 0 270px;
-    width: 100% !important;
+    width: 90% !important;
     height: 00px !important;
     max-width: none !important;
     min-width: 0px;

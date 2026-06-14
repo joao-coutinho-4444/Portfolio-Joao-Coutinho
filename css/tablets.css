@@ -138,7 +138,7 @@
   }
 
   .frame-controller-illustrations .project-frame-content-image{
-    height: 240px;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,11 +154,27 @@
     outline: 1px solid #8D8D8D;
     display: block;
   }
+  .frame-controller-illustrations .project-frame-header-software svg,
+  .frame-controller-logos .project-frame-header-software svg,
+  .frame-controller-image-editing .project-frame-header-software svg,
+  .frame-controller-3d-modeling .project-frame-header-software svg {
+    width: 34px;
+  }
+
 
   .frame-controller-illustrations .project-frame-content-text-button{
     gap: 12px;
     display: flex;
     flex-direction: column;
+  }
+
+  .frame-controller-3d-modeling .project-frame-content-image canvas{
+    height: 280px !important;
+
+  }
+  .frame-controller-3d-modeling .project-frame-content-image {
+    height: 280px !important;
+
   }
 
   .frame-controller-logos .project-frame-content-image,
@@ -168,7 +184,7 @@
     max-width: none;
     flex: 1 1 100%;
     min-width: 0;
-    max-height: 400px;
+    max-height: 280px;
   }
 
   .frame-controller-logos .project-frame-content-image,
@@ -195,7 +211,7 @@
   }
 
   .frame-controller-logos .project-frame-content-image-frame {
-    height: 160px;
+    height: 190px;
   }
 
   .frame-controller-logos .project-frame-content-image img,
@@ -376,7 +392,23 @@
   
 
   .frame-controller-illustrations{
-  width: 676px;
+    width: 85%;
+    max-width: 678px;
+  }
+
+  .frame-controller-logos{
+    width: 55%;
+    max-width: 355px;
+  }
+
+  .frame-controller-image-editing{
+    width: 85%;
+    max-width: 678px;
+  }
+
+  .frame-controller-3d-modeling{
+    width: 85%;
+    max-width: 678px;
   }
 
   /* Make image-editing frame project content behave like 3d-modeling frame at this threshold */
@@ -392,7 +424,7 @@
   }
 
   .frame-controller-image-editing .project-frame-content-image{
-    height: 240px;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
