@@ -423,5 +423,20 @@
     min-width: 320px; 
   }
 
+  /* Disable hover scaling/animation on mobile devices */
+  .project-frame:hover {
+    transform: none !important;
+  }
+  .project-frame:hover::before {
+    animation: none !important;
+    background: rgba(15, 15, 15, 0.42) !important;
+  }
+  .project-frame:active {
+    transform: none !important;
+  }
+  .project-frame:active::before {
+    background: rgba(15, 15, 15, 0.42) !important;
+    opacity: 1 !important;
+  }
  }
   
