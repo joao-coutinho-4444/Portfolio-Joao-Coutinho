@@ -344,132 +344,21 @@
     max-width: none;
   }
 
-  .frame-controller-contact .project-frame-content-image {
-    display: none;
-  }
-
-  /* Duplicated rules from .frame-controller-about -> .frame-controller-contact */
-  .frame-controller-contact {
-    min-width: 562px;
-  }
-
-  .frame-controller-contact .project-frame-content-image {
-    position: relative;
-    flex: 0 0 30% !important;
-    width: 30% !important;
-    max-width: 30% !important;
-    min-width: 167px;
-    align-self: flex-start;
-    max-height: 400px;
-  }
-
   
 
-  .frame-controller-contact .project-frame-header {
-    /* responsive height: between 63px and 80px depending on frame width */
-    height: clamp(69px, calc(4.5vw + 20px), 80px);
-    margin: 0;
-    padding: 00px;
-  }
-
-  .frame-controller-contact .project-frame-content-image img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .frame-controller-contact .project-frame-header-software svg,
-  .frame-controller-contact .project-frame-header-software img{
-    flex: 0 0 auto;
-  }
-
-  .frame-controller-contact .project-frame-header-software {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 60%;
-    align-items: center;
-    justify-content: flex-end;
-    transform-origin: right center;
-    width: fit-content;
-    height: 50%;
-    right: 0;
-    position: absolute;
-    transform: scale(clamp(0.72, calc(100vw / 1350px), 1));
-    margin: 0 20px 0 0 !important;
-    flex-shrink: 0;
-  }
-
-  .frame-controller-contact .project-frame-header-title-logo {
-    width: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 0px;
-    padding: 0px 10px 0 10px;
-    top: 0;
-    gap: 0px;
-  }
-
-  .project-frame-content-text-button a {
-    left: 0;
-  }
-
-  .frame-controller-contact .project-frame-header-title-logo img{
-    width: 55px !important;
-    height: auto !important;
-    transform: scale(clamp(0.72, calc(100vw / 1350px), 1));
-  }
-
-  .project-frame-content-text-button {
-    position: relative;
-    left: 0;
-    min-width: 0;
-    max-width: 300px;
-  }
 
 
 
 
 
-  .frame-controller-contact .project-frame-header-title-logo > .project-frame-header-software {
-    margin-left: clamp(16px, 3vw, 42px) !important;
-  }
 
-  .frame-controller-contact .project-frame-content {
-    margin: 40px 0 40px 0;
-    width: calc(100% - 40px);
-    flex-direction:row;
-    justify-content: center;
-  }
 
-  .frame-controller-contact .project-frame-header-software svg {
-    width: clamp(34px, 3.4vw, 46px);
-    height: auto;
-    flex-shrink: 0;
-    transform: scale(calc(1 / clamp(0.72, calc(100vw / 1350px), 1)));
-    transform-origin: center center;
-  }
 
- 
 
-  .frame-controller-contact .project-frame-header-title {
-    white-space: nowrap;
-    font-size: clamp(24px, 3vw, 34px);
-    line-height: 1.05;
-  }
 
-  .frame-controller-contact .project-frame-header-subtitle {
-      margin: 0 20px;
-    font-size: clamp(11px, 1.6vw, 15px);
-    white-space: nowrap;
-  }
 
-  .frame-controller-contact .project-frame-header-line {
-    bottom: 10px;
-  }
 
-  
+
 
 
 
@@ -524,6 +413,26 @@
   }
   .footer-content > :nth-child(2) {
     display: none !important;
+  }
+
+  .frame-controller-contact .project-frame-content-image {
+    display: none;
+
+  }
+
+  .frame-controller-contact .project-frame-content {
+    align-items: center;
+    flex-direction: column;
+
+  }
+  .frame-controller-contact .project-frame-header-subtitle {
+    top: 88px;
+  }
+
+  .frame-controller-contact .project-frame-content {
+    margin: 40px 0 ;
+    width: calc(100% - 40px);
+    
   }
 
 }

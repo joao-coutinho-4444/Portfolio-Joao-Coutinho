@@ -222,23 +222,23 @@
 
   .project-frame-header{
     /* outline: 1px solid rgb(60, 255, 0); */
-    height: fit-content;
-    padding: 0 ;
-    top: 0;
+    
+    /* padding: 0 ;
+    top: 0; */
   }
 
   .project-frame-header-title-logo {
-    top: 0;
-  
+    margin: 0 20px;
+    width: calc(100% - 40px);
   }
 
   .project-frame-header-title-logo img{
-    width: 30px !important;
-    height: auto !important;
+    /* width: 30px !important;
+    height: auto !important; */
   }
 
   .project-frame-header-line {
-  bottom: 3px;
+  /* bottom: 3px; */
   }
 
   .project-frame-header-subtitle {
@@ -498,9 +498,32 @@
 
   }
 
+  
 
+  .frame-controller-contact {
+    min-width: 340px; 
+  }
+
+
+
+  
   
 
   
 
 }
+ @media (max-width: 400px) {
+  .frame-controller-contact .project-frame-content-text-button {
+    gap: 0px;
+  }
+  .frame-controller-contact .project-frame-content-text-button a{
+    transform: scale(0.8) translateX(-12px);
+    
+  }
+
+  .frame-controller-contact {
+    min-width: 320px; 
+  }
+
+ }
+  
