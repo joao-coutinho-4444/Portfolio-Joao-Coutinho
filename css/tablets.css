@@ -328,7 +328,7 @@
   }
 
   .frame-controller-about .project-frame-content-text-button p {
-        font-size: clamp(12px, 1.6vw, 22px);
+    font-size: clamp(12px, 1.6vw, 22px);
   }
 
 

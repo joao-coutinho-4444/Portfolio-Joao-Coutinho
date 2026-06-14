@@ -220,26 +220,11 @@
     transform: none !important;
   }
 
-  .project-frame-header{
-    /* outline: 1px solid rgb(60, 255, 0); */
-    
-    /* padding: 0 ;
-    top: 0; */
-  }
-
   .project-frame-header-title-logo {
     margin: 0 20px;
     width: calc(100% - 40px);
   }
 
-  .project-frame-header-title-logo img{
-    /* width: 30px !important;
-    height: auto !important; */
-  }
-
-  .project-frame-header-line {
-  /* bottom: 3px; */
-  }
 
   .project-frame-header-subtitle {
     margin: 0 20px;
@@ -438,38 +423,36 @@
     flex-shrink: 0;
   }
 
-  .frame-controller-about .project-frame-header {
-    height: clamp(83px, calc(4.5vw + 20px), 80px);
-    /* outline: red solid 1px; */
-    
-
-  }
 
   .frame-controller-about {
     position: relative;
+    top: -20px !important;
     z-index: -1;
     display: block; /* ensure normal flow */
-    min-width: 203px; /* allow flex children to shrink */
+    min-width: 340px; /* allow flex children to shrink */
   }
-  .frame-controller-about .project-frame-header-subtitle {
-    top: 50px;
-    margin: 0 14px;
 
-  }
-  .frame-controller-about .project-frame-header-line {
-    bottom: 0px;
-    top: 48px;
-  }
 
   .frame-controller-about .project-frame-content {
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
-    top: auto; /* avoid visual offset that breaks container height */
-    margin: 20px 0 30px 0; /* spacing below header */
-    margin-top: calc(1rem + 50px); /* ensure content sits below header and contributes to parent's height */
-    width: calc(100% - 30px);
+    margin: 20px 0 40px; /* spacing below header */
+    width: calc(100% - 40px);
+    flex-direction: column; /* stack vertically */
+
   
+  }
+  
+
+  .frame-controller-about .project-frame-content-image {
+    align-self: center;
+    flex: 0 0 270px;
+    width: 100% !important;
+    height: 00px !important;
+    max-width: none !important;
+    min-width: 0px;
+    max-height: none;
+    min-height: 0px;
+
+
   }
 
   .frame-controller-about .project-frame-content-text-button {
@@ -478,24 +461,11 @@
     max-width: none !important;
   }
 
-  .frame-controller-about .project-frame-header-title-logo > .project-frame-header-software {
-    justify-content: flex-start;
-    padding: 0 0 0 20px;
-    width: 130%;
-    top: 75px;
-    position: absolute;
-    right: auto;
-    transform-origin: left;
-    align-self: flex-start;
-    flex: 0 ;
-    max-width: none;
-    margin: 0 !important;
+  .frame-controller-about  .project-frame-header-software svg {
+    width: 24px;
+    height: auto;
+    
   
-  }
-
-  .frame-controller-about .project-frame-header-title-logo {
-    padding: 0px 0px 0 0px;
-
   }
 
   
@@ -522,6 +492,10 @@
   }
 
   .frame-controller-contact {
+    min-width: 320px; 
+  }
+
+  .frame-controller-about {
     min-width: 320px; 
   }
 

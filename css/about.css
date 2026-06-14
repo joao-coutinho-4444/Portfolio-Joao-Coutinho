@@ -16,10 +16,10 @@ body .frame-controller-about {
 
 @media (max-width: 1520px) {
   body .frame-controller-about {
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
+    top: auto;
+    right: auto ;
+    bottom: auto ;
+    left: auto ;
     align-self: flex-start !important;
     margin-top: 160px !important;
   }
