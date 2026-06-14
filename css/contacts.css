@@ -59,17 +59,19 @@ body .frame-controller-contact {
 }
 .frame-controller-contact .project-frame-content{
   display: flex;
-  flex-direction: row-reverse; /* image on the right, text on the left */
-  align-items: stretch; /* make image match text height */
+  flex-direction: row; /* image on the right, text on the left */
+  align-items: stretch; /* stretch both columns to same height */
   gap: 24px;
 }
 .frame-controller-contact .project-frame-content-image {
   position: relative;
-  flex: 0 0 844.55px;
-  width: 864.55px;
-  max-width: 864.55px;
-  min-width: 420px;
-  align-self: flex-start;
+  flex: 1 1 0 !important; /* fill remaining flex space */
+  min-width: 0 !important; /* allow the image container to shrink */
+  width: 0 !important; /* let flex determine width from available space */
+  margin: 0;
+  max-width: none !important;
+  align-self: stretch;
+
 }
 
 .frame-controller-contact .project-frame-content-image svg {
@@ -81,12 +83,13 @@ body .frame-controller-contact {
 }
 
 .frame-controller-contact .project-frame-content-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
-  border-radius: 10px;
-  outline: 1px solid #8D8D8D;
+  
   display: block;
 }
 
@@ -99,18 +102,22 @@ body .frame-controller-contact {
 
 .project-frame-content-text-button {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center; /* horizontal centering of children */
+  flex-direction: column; /* stack vertically */
+  justify-content: flex-start; /* vertical centering */
+  align-items: flex-start; /* horizontal centering of children */
   gap: 15px;
   flex: 1;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   height: 100%; /* match the image height thanks to parent align-items: stretch */
   box-sizing: border-box;
   /* outline: 1px solid #ff0000; */
 }
 
 .project-frame-content-text-button a{
-  left: 30px;
+ 
+  
   position: relative;
   display: flex; /* logo + text container */
   flex-direction: row; /* logo first, texts after */
