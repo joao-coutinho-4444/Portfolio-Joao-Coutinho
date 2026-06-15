@@ -3,6 +3,7 @@
   header {
     position: fixed;
     z-index: 99999 !important;
+    pointer-events: none; /* allow clicks to pass through header unless child overrides */
   }
 
   .nav-container {
@@ -392,11 +393,58 @@
   
   }
 
-  
-
   .frame-controller-contact {
     min-width: 340px; 
   }
+
+  .illustrations {
+    height:280px;
+    width: calc(65% - 60px);
+    max-width: 181px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+  .illustrations[alt="Illustration 4"] {
+    object-position: -60px 0;
+  }
+
+  .illustrations[alt="Illustration 6"] {
+    object-position: -100px 0;
+  }
+
+   .illustrations[alt="Illustration 7"] {
+    object-position: -60px 0;
+  }
+
+
+
+  .arrow-container{
+    /* outline: 1px solid red; */
+    height: 25px;
+    margin: 144px 20px 30px 20px;
+    width: calc(100% - 40px);
+  }
+
+  .arrow-container svg{
+    width: 25px;
+    height: 25px;
+    z-index: 100;
+  }
+
+  .title-text {
+    font-size: 20px; 
+  }
+  .illustrations-container{
+    margin: 0px 20px;
+    width: calc(100% - 40px);
+  }
+
+  .gallery-row{
+    gap: 8px;
+    /* flex-direction: row-reverse; */
+  }
+
+
 
 
 
