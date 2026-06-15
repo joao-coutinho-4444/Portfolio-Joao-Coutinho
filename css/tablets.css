@@ -553,11 +553,6 @@
   }
 
 
-
-
-
-}
-
 /* Disable hover scaling/animation on tablets */
 .project-frame:hover {
   transform: none !important;
@@ -573,3 +568,8 @@
   background: rgba(15, 15, 15, 0.42) !important;
   opacity: 1 !important;
 }
+
+
+
+}
+
