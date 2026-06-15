@@ -376,7 +376,7 @@
 
   .illustrations {
     border-radius: 5px;
-    height:30vh;
+    height:40vh;
 }
 
   .arrow-container{
@@ -532,24 +532,33 @@
     width: calc(100% - 40px);
     
   }
-  .illustrations {
+  .illustration-card {
     height:280px;
     width: calc(65% - 60px);
     max-width: 181px;
     border-radius: 5px;
-    object-fit: cover;
+    overflow: hidden;
   }
 
-  .illustrations[alt="Illustration 4"] {
-    object-position: -60px 0;
+  .illustrations {
+    position: relative;
+    
   }
 
-  .illustrations[alt="Illustration 6"] {
-    object-position: -100px 0;
+  .illustrations[alt="Cartethiya - Wuthering Waves"] {
+    left: 130px;
   }
 
-   .illustrations[alt="Illustration 7"] {
-    object-position: -60px 0;
+  .illustrations[alt="Eminence in Shadow - Alpha"] {
+    left: 20px;
+  }
+
+  .illustrations[alt="Son Goku - Dragon Ball Super"] {
+    left: 60px;
+  }
+
+   .illustrations[alt="OC - Lilith"] {
+    left: 100px;
   }
 
 

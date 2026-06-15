@@ -397,24 +397,14 @@
     min-width: 340px; 
   }
 
-  .illustrations {
+  .illustration-card {
     height:280px;
     width: calc(65% - 60px);
     max-width: 181px;
     border-radius: 5px;
-    object-fit: cover;
+  
 }
-  .illustrations[alt="Illustration 4"] {
-    object-position: -60px 0;
-  }
 
-  .illustrations[alt="Illustration 6"] {
-    object-position: -100px 0;
-  }
-
-   .illustrations[alt="Illustration 7"] {
-    object-position: -60px 0;
-  }
 
 
 
