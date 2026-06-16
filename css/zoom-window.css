@@ -39,7 +39,7 @@
 
 }
 
-.zoom-window-image {
+.zoom-window-image ,.zoom-window-canvas {
     width: auto;
     height: 60vh;
     
@@ -95,7 +95,7 @@
 }
 
 @media (max-width: 1250px) {
-    .zoom-window-image {
+    .zoom-window-image, .zoom-window-canvas {
        max-width: 100%;
         height: auto;
         max-height: 60vh;
@@ -105,7 +105,7 @@
 }
 
 @media (max-width: 600px) {
-    .zoom-window-image {
+    .zoom-window-image, .zoom-window-canvas {
         max-width: 100%;
         height: auto;
     }
