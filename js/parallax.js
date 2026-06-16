@@ -1,3 +1,43 @@
+// Load correct parallax images based on viewport
+const isMobileViewport = () => window.innerWidth <= 660;
+
+const loadParallaxImages = () => {
+  const desktopImages = document.querySelectorAll('.parallax-layer.desktop');
+  const mobileImages = document.querySelectorAll('.parallax-layer.mobile');
+  
+  if (isMobileViewport()) {
+    // Mobile: remove data-src from desktop images to prevent loading
+    desktopImages.forEach(img => {
+      img.removeAttribute('data-src');
+      img.removeAttribute('src');
+    });
+    // Show mobile images
+    mobileImages.forEach(img => {
+      img.style.display = '';
+    });
+    desktopImages.forEach(img => {
+      img.style.display = 'none';
+    });
+  } else {
+    // Desktop: load desktop images from data-src
+    desktopImages.forEach(img => {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+    });
+    // Hide mobile images
+    mobileImages.forEach(img => {
+      img.style.display = 'none';
+    });
+    desktopImages.forEach(img => {
+      img.style.display = '';
+    });
+  }
+};
+
+// Load immediately before page renders
+loadParallaxImages();
+
 const parallaxLayers = document.querySelectorAll('.parallax-layer');
 const layer3 = document.querySelector('.layer3');
 const layer4 = document.querySelector('.layer4');
