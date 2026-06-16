@@ -1,11 +1,9 @@
 const illustrationData = [
-  { fileName: "Cartethiya - Wuthering Waves.png", title: "Cartethiya - Wuthering Waves", date: "2026", description: "2026" },
-  { fileName: "Aphelios - League of Legends.png", title: "Aphelios - League of Legends", date: "2025", description: "2025" },
-  { fileName: "Eminence in Shadow - Alpha.png", title: "Eminence in Shadow - Alpha", date: "2025", description: "2025" },
-  { fileName: "Goku.png", title: "Son Goku - Dragon Ball Super", date: "2026", description: "2026" },
-  { fileName: "Illustration.png", title: "OC - Lilith", date: "2025", description: "2025" },
-  { fileName: "Jane Doe ZZZ.png", title: "Jane Doe - Zenless Zone Zero", date: "2026", description: "2026" },
-  { fileName: "White Hair.png", title: "OC - Lyra", date: "2026", description: "2026" }
+  { fileName: "bentley-continental-gt-mulliner-coupe-1 insta.png", title: "Car Mashup - Bentley Continental GT + Polestar 1", date: "2020", description: "2020" },
+  { fileName: "final.png", title: "Self Portrait - Surrealism", date: "2021", description: "2021" },
+  { fileName: "Musrtang-Acura(NSX-GT500).png", title: "Car Mashup - Acura NSX + Shelby GT500", date: "2020", description: "2020" },
+  { fileName: "skyline wallpaper 4k signed.png", title: "Digital Composing - Daylight", date: "2022", description: "2022" },
+  { fileName: "skyline-neon 4k.png", title: "Digital Composing - Night", date: "2022", description: "2022" }
 ];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -25,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const imagePromises = illustrationData.map(({ fileName, title, date, description }) => {
     return new Promise((resolve) => {
       const img = document.createElement("img");
-      img.src = `images/projects_illustrations/${fileName}`;
+      img.src = `images/projects_image_editing/${fileName}`;
       img.className = "illustrations";
       img.alt = title;
 

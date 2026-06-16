@@ -47,8 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
       const overlay = document.createElement("div");
       overlay.className = "illustration-overlay";
       overlay.innerHTML = `
-        <div class="illustration-overlay-title">${item.title}</div>
-        <div class="illustration-overlay-date">${item.date}</div>
+        <h1 class="illustration-overlay-title">${item.title}</h1>
+        <h2 class="illustration-overlay-date">${item.date}</h2>
       `;
 
       item.img.alt = item.title;
