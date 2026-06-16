@@ -35,9 +35,27 @@ function createParticlesForLayer(layerEl, count = 60, sizeMin = 2, sizeMax = 6) 
 
 window.createParticlesForLayer = createParticlesForLayer;
 
+const isMobileDevice = () => {
+  return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
+
 if (particleLayers.length > 0) {
+  const isMobile = isMobileDevice();
+  const layer5Count = isMobile ? 50 : 130;
+  const layer6Count = isMobile ? 25 : 55;
+  
   particleLayers.forEach(pl => {
-    if (pl.classList.contains('layer5')) createParticlesForLayer(pl, 130, 2, 8);
-    else if (pl.classList.contains('layer6')) createParticlesForLayer(pl, 55, 1.2, 4);
+    if (pl.classList.contains('layer5')) createParticlesForLayer(pl, layer5Count, 2, 8);
+    else if (pl.classList.contains('layer6')) createParticlesForLayer(pl, layer6Count, 1.2, 4);
   });
 }
+
+window.addEventListener('resize', () => {
+  const isMobile = isMobileDevice();
+  if (particleLayers.length > 0) {
+    particleLayers.forEach(pl => {
+      if (pl.classList.contains('layer5')) createParticlesForLayer(pl, isMobile ? 50 : 130, 2, 8);
+      else if (pl.classList.contains('layer6')) createParticlesForLayer(pl, isMobile ? 25 : 55, 1.2, 4);
+    });
+  }
+});

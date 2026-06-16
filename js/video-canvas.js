@@ -11,10 +11,15 @@ const setupProjectVideoCanvas = () => {
     return;
   }
 
+  let isRendering = false;
+  let renderAnimationId = null;
+
   const drawFrame = () => {
     const { clientWidth, clientHeight } = canvas;
     if (!clientWidth || !clientHeight || !video.videoWidth || !video.videoHeight) {
-      requestAnimationFrame(drawFrame);
+      if (isRendering) {
+        renderAnimationId = requestAnimationFrame(drawFrame);
+      }
       return;
     }
 
@@ -33,16 +38,53 @@ const setupProjectVideoCanvas = () => {
 
     ctx.clearRect(0, 0, cw, ch);
     ctx.drawImage(video, offsetX, offsetY, drawWidth, drawHeight);
-    requestAnimationFrame(drawFrame);
+    
+    if (isRendering) {
+      renderAnimationId = requestAnimationFrame(drawFrame);
+    }
   };
 
-  const start = async () => {
+  const startRendering = async () => {
+    if (isRendering) return;
+    isRendering = true;
     try {
       await video.play();
     } catch {
       // Autoplay may still be blocked until the browser allows it.
     }
-    requestAnimationFrame(drawFrame);
+    renderAnimationId = requestAnimationFrame(drawFrame);
+  };
+
+  const stopRendering = () => {
+    isRendering = false;
+    if (renderAnimationId) {
+      cancelAnimationFrame(renderAnimationId);
+      renderAnimationId = null;
+    }
+    video.pause();
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "50px",
+    threshold: 0.01
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startRendering();
+      } else {
+        stopRendering();
+      }
+    });
+  }, observerOptions);
+
+  const start = async () => {
+    observer.observe(canvas);
+    if (canvas.offsetHeight > 0) {
+      startRendering();
+    }
   };
 
   if (video.readyState >= 2) {

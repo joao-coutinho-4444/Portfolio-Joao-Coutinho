@@ -102,11 +102,23 @@ const requestCustomScrollbarUpdate = () => {
 window.requestScrollDownVisibilityUpdate = requestScrollDownVisibilityUpdate;
 window.requestCustomScrollbarUpdate = requestCustomScrollbarUpdate;
 
+const isMobileScrollOptimize = () => window.innerWidth <= 768;
+let lastScrollTime = 0;
+const scrollThrottle = isMobileScrollOptimize() ? 100 : 16;
+
+const throttledScrollUpdate = () => {
+  const now = Date.now();
+  if (now - lastScrollTime >= scrollThrottle) {
+    lastScrollTime = now;
+    requestScrollDownVisibilityUpdate();
+    requestCustomScrollbarUpdate();
+  }
+};
+
 window.addEventListener('load', updateScrollDownVisibility);
 window.addEventListener('load', updateProjectFrameHeaderLine);
 window.addEventListener('load', updateCustomScrollbar);
-window.addEventListener('scroll', requestScrollDownVisibilityUpdate, { passive: true });
-window.addEventListener('scroll', requestCustomScrollbarUpdate, { passive: true });
+window.addEventListener('scroll', throttledScrollUpdate, { passive: true });
 window.addEventListener('resize', requestCustomScrollbarUpdate);
 document.fonts?.ready.then(updateScrollDownVisibility);
 document.fonts?.ready.then(updateProjectFrameHeaderLine);

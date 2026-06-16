@@ -80,18 +80,71 @@ const updateLayerPositions = () => {
   animationFrame = requestAnimationFrame(updateLayerPositions);
 };
 
+let isDriftRunning = false;
+let driftAnimationId = null;
+let layerAnimationId = null;
+
 const startDrift = () => {
-  if (!layer4) {
+  if (!layer4 || isDriftRunning) {
     return;
   }
 
+  isDriftRunning = true;
   const driftLoop = () => {
     updateDrift();
-    requestAnimationFrame(driftLoop);
+    driftAnimationId = requestAnimationFrame(driftLoop);
   };
 
-  requestAnimationFrame(driftLoop);
+  driftAnimationId = requestAnimationFrame(driftLoop);
 };
+
+const stopDrift = () => {
+  isDriftRunning = false;
+  if (driftAnimationId) {
+    cancelAnimationFrame(driftAnimationId);
+    driftAnimationId = null;
+  }
+};
+
+let isLayerUpdateRunning = false;
+
+const startLayerUpdate = () => {
+  if (isLayerUpdateRunning) return;
+  isLayerUpdateRunning = true;
+  layerAnimationId = requestAnimationFrame(updateLayerPositions);
+};
+
+const stopLayerUpdate = () => {
+  isLayerUpdateRunning = false;
+  if (layerAnimationId) {
+    cancelAnimationFrame(layerAnimationId);
+  }
+};
+
+const observerOptions = {
+  root: null,
+  rootMargin: '100px',
+  threshold: 0.01
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      startDrift();
+      startLayerUpdate();
+    } else {
+      stopDrift();
+      stopLayerUpdate();
+    }
+  });
+}, observerOptions);
+
+const parallaxBg = document.querySelector('.parallax-bg');
+if (parallaxBg) {
+  observer.observe(parallaxBg);
+  startDrift();
+  startLayerUpdate();
+}
 
 window.addEventListener('mousemove', event => {
   mouseX = event.clientX;

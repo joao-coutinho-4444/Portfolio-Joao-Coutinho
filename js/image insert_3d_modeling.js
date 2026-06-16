@@ -33,11 +33,13 @@ window.addEventListener("DOMContentLoaded", () => {
         video.muted = true;
         video.loop = true;
         video.style.display = "none";
+        video.preload = "metadata";
 
         canvas.videoElement = video;
 
         let videoLoaded = false;
         let isPlaying = false;
+        let renderAnimationId = null;
 
         const renderFrame = () => {
           if (videoLoaded && video.readyState >= video.HAVE_FUTURE_DATA) {
@@ -45,7 +47,23 @@ window.addEventListener("DOMContentLoaded", () => {
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
           }
           if (isPlaying) {
-            requestAnimationFrame(renderFrame);
+            renderAnimationId = requestAnimationFrame(renderFrame);
+          }
+        };
+
+        const startRendering = () => {
+          if (!isPlaying && videoLoaded) {
+            isPlaying = true;
+            video.play().catch(() => {});
+            renderFrame();
+          }
+        };
+
+        const stopRendering = () => {
+          isPlaying = false;
+          if (renderAnimationId) {
+            cancelAnimationFrame(renderAnimationId);
+            renderAnimationId = null;
           }
         };
 
@@ -55,14 +73,44 @@ window.addEventListener("DOMContentLoaded", () => {
           const canvasHeight = canvas.offsetHeight || 40 * window.innerHeight / 100;
           canvas.height = canvasHeight;
           canvas.width = canvasHeight * aspectRatio;
-          isPlaying = true;
-          video.play().catch(() => {});
-          renderFrame();
-          resolve({ img: canvas, title, date, description, width: video.videoWidth || 0 });
         });
 
         video.addEventListener("error", () => {
           resolve({ img: canvas, title, date, description, width: 0 });
+        });
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "50px",
+          threshold: 0.01
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (videoLoaded) {
+                startRendering();
+              }
+            } else {
+              stopRendering();
+            }
+          });
+        }, observerOptions);
+
+        video.addEventListener("loadedmetadata", () => {
+          videoLoaded = true;
+          const aspectRatio = video.videoWidth / video.videoHeight;
+          const canvasHeight = canvas.offsetHeight || 40 * window.innerHeight / 100;
+          canvas.height = canvasHeight;
+          canvas.width = canvasHeight * aspectRatio;
+          
+          setTimeout(() => {
+            if (observer) {
+              observer.observe(canvas);
+            }
+          }, 100);
+          
+          resolve({ img: canvas, title, date, description, width: video.videoWidth || 0 });
         });
 
         document.body.appendChild(video);
