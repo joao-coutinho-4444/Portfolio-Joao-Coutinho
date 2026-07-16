@@ -5,6 +5,9 @@ const illustrationData = [
   { fileName: "Goku.png", title: "Son Goku - Dragon Ball Super", date: "2026", description: "2026" },
   { fileName: "Illustration.png", title: "OC - Lilith", date: "2025", description: "2025" },
   { fileName: "Jane Doe ZZZ.png", title: "Jane Doe - Zenless Zone Zero", date: "2026", description: "2026" },
+  { fileName: "Noelle Silva - Black Clover.png", title: "Noelle Silva - Black Clover", date: "2026", description: "2026" },
+  { fileName: "sailor moon.png", title: "Sailor Moon - Sailor Moon", date: "2026", description: "2026" },
+  { fileName: "Vergil - Devil May Cry.png", title: "Vergil - Devil May Cry", date: "2026", description: "2026" },
   { fileName: "White Hair.png", title: "OC - Lyra", date: "2026", description: "2026" }
 ];
 
@@ -99,3 +102,4 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
